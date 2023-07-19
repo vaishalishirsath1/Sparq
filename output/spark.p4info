@@ -1,0 +1,39 @@
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 48816345
+    name: "MyIngress.syn_flag_table"
+    alias: "syn_flag_table"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.tcp.flags"
+    bitwidth: 8
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 25589610
+  }
+  action_refs {
+    id: 21545914
+  }
+  size: 1024
+}
+actions {
+  preamble {
+    id: 25589610
+    name: "MyIngress.forward_to_controller"
+    alias: "forward_to_controller"
+  }
+}
+actions {
+  preamble {
+    id: 21545914
+    name: "MyIngress._drop"
+    alias: "_drop"
+  }
+}
+type_info {
+}
